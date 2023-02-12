@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_project/food_details.dart';
 
 class PlaceOrderInfoScreen extends StatelessWidget {
   const PlaceOrderInfoScreen({Key? key}) : super(key: key);
@@ -200,14 +201,19 @@ class PlaceOrderInfoScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(width: 5,),
-                    Container(
-                      decoration:BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.red
-                      ),
-                      child: const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text("Rate pugau app",style: TextStyle(fontSize: 18, color: Colors.white)),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => FoodDetailsScreen()));
+                      },
+                      child: Container(
+                        decoration:BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.red
+                        ),
+                        child: const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text("Rate pugau app",style: TextStyle(fontSize: 18, color: Colors.white)),
+                        ),
                       ),
                     ),
                   ]
